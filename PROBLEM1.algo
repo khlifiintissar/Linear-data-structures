@@ -1,0 +1,31 @@
+PROBLEM1.algo
+ALOGORITHME_SUM_IN_ARRAYS
+VAR
+S1:ARRAY_OF INTEGER[];
+S2:ARRAY_OF INTEGER[];
+i,j:INTEGER;
+BEGIN
+//remplir les deux tableaux
+i:=0
+FOR i FROM 0 TO length S1-1 STEP BY 1 DO 
+    WRITE (S1[i])
+    READ  (S1[i])
+END FOR
+i:=0
+FOR i FROM 0 TO length S2-1 STEP BY DO
+    WRITE (S2[i])
+    READ (S2[i])
+END FOR
+//faire la somme des entiers distincts
+i:=0
+j:=0
+FOR i FROM 0 TO length S1-1 STEP BY 1 DO 
+       FOR j FROM 0 TO length S2-1 STEP BY 1 DO 
+             IF  (S1[i]<>S2[j]) THEN
+             s := s + S1[i]
+             END IF
+    WRITE (s)
+    END FOR
+END FOR 
+WRITE ("the sum of non_repeating elements is",s)    
+END

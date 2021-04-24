@@ -1,0 +1,50 @@
+HASH_TAB1.algo
+ALGORITHM SUM IN ARRAY
+S1:ARRAY oF INTEGER []
+S2:ARRAY OF INTEGER []
+HS1:HASH_TABLE<integer,integer>;
+HS2:HASH_TABLE<integer,integer>;
+SD,SC,i,j:INTEGER;
+BEGIN
+i:=0 
+FOR i FROM 0 TO length S1-1  STEP BY 1 DO 
+  HS1.insert(S1[i],i);
+  WRITE(HS1)
+END FOR
+i:=0
+FOR i FROM 0 TO length S2-1 STEP BY 1 DO 
+  HS2.insert(S2[i],i)
+  WRITE(HS2)
+END FOR 
+FOR i FROM 0 TO length S1-1 STEP BY 1 DO 
+    IF (HS2.lookup(S1[i])=TRUE) THEN 
+     HS1.insert(S1[i],1)
+     ELSE 
+     HS1.insert(S1[i],i+1)
+     END IF
+     WRITE(HS1)
+END FOR 
+FOR i FROM 0 TO length S2-1 STEP BY 1 DO
+     IF (HS1.lookup(S2[i])=TRUE) THEN
+     HS2.insert(S2[i],1)
+     ELSE 
+     HS2.insert(S2[i],i+1)
+     END IF 
+     WRITE (HS2)
+END FOR 
+ FOR i FROM 0 to length S1-1 
+    FOR j FROM 0 TO length S2-1
+      IF (HS1(S1[i])=HS2[j]=1) THEN
+       SC:=SC+S1[i]+S2[j]
+       ELSE 
+       SD:= SD + S1[i] +S2[j]
+      END IF 
+      WRITE(SC)
+      WRITE(SD) 
+    END FOR
+ END FOR
+ WRITE("the sum of repeating elements is",SC)
+ WRITE (""the sum of non_repeating elements is",SD )   
+ END 
+
+     
